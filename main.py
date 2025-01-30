@@ -44,6 +44,8 @@ for dataset_model in dataset_models:
             min_value[o["name"]] = 9999
      
     for method_model in method_models:
+        print(f"*** feature selection for {dataset_model.dataset_name} using {method_model.name} ***")
+        method_model.feature_selection(dataset_model)
         plot_results(method_model, dataset_model.dataset_name, max_value, min_value)
 
 
